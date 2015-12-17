@@ -52,7 +52,7 @@ class Jukebox
     end
   end
 
-# del
+  # del
   def delete_song
     puts "Enter Name of Song:"
     @title_requested = gets.chomp.downcase
@@ -106,9 +106,13 @@ class Jukebox
   end
 
   def print_songlist
-    @songlist.each do |song|
-      print "Song: " + song.title
-      puts ",  Artist: " + song.artist
+    if @songlist.empty?
+      puts "Jukebox empty! Add more songs!"
+    else
+      @songlist.each do |song|
+        print "Song: " + song.title
+        puts ",  Artist: " + song.artist
+      end
     end
   end
 end
